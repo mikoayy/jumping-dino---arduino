@@ -50,17 +50,6 @@ byte customChar1[8] = {
 	0b10001
 };
 //obstacle
-byte customChar1[8] = {
-  0b00000,
-  0b00000,
-  0b00000,
-  0b10111,
-  0b10100,
-  0b11111,
-  0b00101,
-  0b11101
-};
-
 byte customChar2[8] = {
   0b00000,
   0b10101,
@@ -119,7 +108,7 @@ void BTN_FN1() {
 }
 
 
-void jump()  //bool BTN_S)
+void jump(bool BTN_S)
 {
   bool timer_running;
 
@@ -202,7 +191,7 @@ void loop() {
   current_time = millis();
   title_screen();
   if (start_game == true) {
-    jump();  //BTN_S);
+    jump(BTN_S);
     if (current_time - remember_time4 >= pace) {
       remember_time4 = current_time;
       cursor_obstacle_1 = obstacle1.position_changing();
